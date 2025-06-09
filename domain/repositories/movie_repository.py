@@ -4,7 +4,7 @@ from domain.entities.movie import Movie
 
 class MovieRepository(ABC):
     @abstractmethod
-    def create(self, movie: Movie) -> Movie:
+    def created(self, movie: Movie) -> Movie:
         pass
 
     @abstractmethod

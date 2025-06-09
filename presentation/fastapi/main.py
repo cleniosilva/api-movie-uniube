@@ -11,8 +11,8 @@ movie_usecase = MovieUsecase()
 
 
 @app.post("/movies/", response_model=MovieModel)
-def create_movie(movie: MovieModel):
-    created_movie = movie_usecase.create(movie.title, movie.year, movie.genre)
+def created_movie(movie: MovieModel):
+    created_movie = movie_usecase.created(movie.title, movie.year, movie.genre)
     return MovieModel(id=created_movie.id, title=created_movie.title, year=created_movie.year, genre=created_movie.genre)
 
 @app.get("/movies/", response_model=List[MovieModel])

@@ -5,9 +5,9 @@ class MovieUsecase:
     def __init__(self, repository: MovieRepository):
         self.repository = repository
 
-    def create(self, title: str, year: int, genre: str) -> Movie:
+    def created(self, title: str, year: int, genre: str) -> Movie:
         movie = Movie(id=None, title=title, year=year, genre=genre)
-        return self.repository.create(movie)
+        return self.repository.created(movie)
 
     def get(self, movie_id: int) -> Movie | None:
         return self.repository.get_by_id(movie_id)

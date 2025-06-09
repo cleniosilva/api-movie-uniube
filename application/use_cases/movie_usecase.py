@@ -18,6 +18,6 @@ class MovieUsecase:
      def listMovie(self) -> List[Movie]:
         return self.repository.get_all()
 
-    def update(self, movie_id: int, title: str, year: int, genre: str) -> Movie | None:
+    def updated(self, movie_id: int, title: str, year: int, genre: str) -> Movie | None:
         movie = Movie(id=movie_id, title=title, year=year, genre=genre)
-        return self.repository.update(movie_id, movie)
+        return self.repository.updated(movie_id, movie)

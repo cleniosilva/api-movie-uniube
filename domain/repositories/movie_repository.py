@@ -16,7 +16,7 @@ class MovieRepository(ABC):
         pass
 
     @abstractmethod
-    def update(self, movie_id: int, movie: Movie) -> Movie | None:
+    def updated(self, movie_id: int, movie: Movie) -> Movie | None:
         pass
 
     @abstractmethod

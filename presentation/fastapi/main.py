@@ -29,7 +29,7 @@ def get_movie(movie_id: int):
 
 @app.put("/movies/{movie_id}", response_model=MovieModel)
 def update_movie(movie_id: int, movie: MovieModel):
-    updated_movie = movie_usecase.update(movie_id, movie.title, movie.year, movie.genre)
+    updated_movie = movie_usecase.updated(movie_id, movie.title, movie.year, movie.genre)
     if updated_movie is None:
         raise HTTPException(status_code=404, detail="Movie not found")
     return MovieModel(id=updated_movie.id, title=updated_movie.title, year=updated_movie.year, genre=updated_movie.genre)

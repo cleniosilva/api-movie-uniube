@@ -4,7 +4,7 @@ from domain.entities.movie import Movie
 
 class MovieRepository(ABC):
     @abstractmethod
-    def create(self, movie: Movie) -> Movie:
+    def created(self, movie: Movie) -> Movie:
         pass
 
     @abstractmethod
@@ -16,9 +16,9 @@ class MovieRepository(ABC):
         pass
 
     @abstractmethod
-    def update(self, movie_id: int, movie: Movie) -> Movie | None:
+    def updated(self, movie_id: int, movie: Movie) -> Movie | None:
         pass
 
     @abstractmethod
-    def delete(self, movie_id: int) -> bool:
+    def deleted(self, movie_id: int) -> bool:
         pass

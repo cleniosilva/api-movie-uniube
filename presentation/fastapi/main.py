@@ -28,15 +28,15 @@ def get_movie(movie_id: int):
     return MovieModel(id=movie.id, title=movie.title, year=movie.year, genre=movie.genre)
 
 @app.put("/movies/{movie_id}", response_model=MovieModel)
-def update_movie(movie_id: int, movie: MovieModel):
+def updated_movie(movie_id: int, movie: MovieModel):
     updated_movie = movie_usecase.updated(movie_id, movie.title, movie.year, movie.genre)
     if updated_movie is None:
         raise HTTPException(status_code=404, detail="Movie not found")
     return MovieModel(id=updated_movie.id, title=updated_movie.title, year=updated_movie.year, genre=updated_movie.genre)
 
-@app.delete("/movies/{movie_id}")
-def delete_movie(movie_id: int):
-    success = movie_usecase.delete(movie_id)
+@app.deleted("/movies/{movie_id}")
+def deleted_movie(movie_id: int):
+    success = movie_usecase.deleted(movie_id)
     if not success:
         raise HTTPException(status_code=404, detail="Movie not found")
     return {"detail": "Movie deleted"}

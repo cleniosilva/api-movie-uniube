@@ -20,5 +20,5 @@ class MovieRepository(ABC):
         pass
 
     @abstractmethod
-    def delete(self, movie_id: int) -> bool:
+    def deleted(self, movie_id: int) -> bool:
         pass

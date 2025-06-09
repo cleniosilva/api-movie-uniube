@@ -12,8 +12,8 @@ class MovieUsecase:
     def get(self, movie_id: int) -> Movie | None:
         return self.repository.get_by_id(movie_id)
 
-    def delete(self, movie_id: int) -> bool:
-        return self.repository.delete(movie_id)
+    def deleted(self, movie_id: int) -> bool:
+        return self.repository.deleted(movie_id)
 
      def listMovie(self) -> List[Movie]:
         return self.repository.get_all()
